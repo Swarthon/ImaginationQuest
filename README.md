@@ -1,7 +1,7 @@
-TextQuest
+ImaginationQuest
 =========
 
-TextQuest is a Role-Playing Game written in Qt. Be who you want. Dicover a new
+ImaginationQuest is a Role-Playing Game written in Qt. Be who you want. Dicover a new
 map. This game does not require any graphic card because all you need is your
 imagination.
 
@@ -20,7 +20,7 @@ Run
 ---
 
 To run this project, make sure that is has been previously compiled. Then go in
-target/bin/ and run TextQuest (TextQuest.exe for Windows users).
+target/bin/ and run ImaginationQuest (ImaginationQuest.exe for Windows users).
 
 Install
 -------
