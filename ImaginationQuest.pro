@@ -1,5 +1,26 @@
-HEADERS += include/*
-SOURCES += src/*
+HEADERS +=	include/GUI/MainWindow.h \
+		include/GUI/HelpWindow.h \
+		include/GUI/InventoryWindow.h \
+		include/GUI/Content.h \
+		include/GUI/Gui.h \
+		include/Game/Game.h \
+		include/Core/Core.h \
+		include/Core/Event.h \
+		include/Core/ImplementedEvents.h \
+		include/Core/Observer.h \
+		include/Core/Part.h
+
+SOURCES +=	src/main.cpp \
+		src/GUI/MainWindow.cpp \
+		src/GUI/HelpWindow.cpp \
+		src/GUI/InventoryWindow.cpp \
+		src/GUI/Content.cpp \
+		src/GUI/Gui.cpp \
+		src/Game/Game.cpp \
+		src/Core/Core.cpp \
+		src/Core/ImplementedEvents.cpp \
+
+INCLUDEPATH += include
 
 CONFIG += qt debug_and_release
 TARGET = ImaginationQuest
@@ -16,3 +37,5 @@ CONFIG(debug, debug|release) {
 CONFIG(release, debug|release) {
 	DESTDIR = target/release/bin
 }
+
+QMAKE_CXXFLAGS += -std=c++11
