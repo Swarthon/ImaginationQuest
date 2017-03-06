@@ -4,11 +4,15 @@ HEADERS +=	include/GUI/MainWindow.h \
 		include/GUI/Content.h \
 		include/GUI/Gui.h \
 		include/Game/Game.h \
+		include/Game/Place.h \
+		include/Game/Parser.h \
+		include/Game/Command.h \
+		include/Game/Story/SpawnPlain.h \
 		include/Core/Core.h \
 		include/Core/Event.h \
 		include/Core/ImplementedEvents.h \
 		include/Core/Observer.h \
-		include/Core/Part.h
+		include/Core/Director.h
 
 SOURCES +=	src/main.cpp \
 		src/GUI/MainWindow.cpp \
@@ -17,6 +21,9 @@ SOURCES +=	src/main.cpp \
 		src/GUI/Content.cpp \
 		src/GUI/Gui.cpp \
 		src/Game/Game.cpp \
+		src/Game/Place.cpp \
+		src/Game/Parser.cpp \
+		src/Game/Story/SpawnPlain.cpp \
 		src/Core/Core.cpp \
 		src/Core/ImplementedEvents.cpp \
 

@@ -3,6 +3,7 @@
 
 // std includes
 #include <string>
+#include <iostream>
 
 // Core includes
 #include "Core/Event.h"
@@ -13,6 +14,20 @@ public:
 	virtual std::string getMessage();
 protected:
 	std::string mMessage;
+};
+
+class OutputEvent : public Event {
+public:
+	OutputEvent(std::string message);
+	virtual std::string getMessage();
+protected:
+	std::string mMessage;
+};
+
+class ReprintEvent : public Event {
+public:
+	ReprintEvent();
+protected:
 };
 
 #endif // IMPLEMENTEDEVENTS

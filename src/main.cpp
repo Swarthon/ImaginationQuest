@@ -3,5 +3,5 @@
 
 int main(int argv, char **args) {
 	Core core;
-	core.startGuiMode(argv, args);
+	return core.startGuiMode(argv, args);
 }

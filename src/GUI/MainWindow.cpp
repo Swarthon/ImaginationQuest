@@ -1,7 +1,9 @@
 #include "GUI/MainWindow.h"
 
 // Constructor
-MainWindow::MainWindow(){
+MainWindow::MainWindow(Observer* o){
+	if(o)
+		attach(o);
 	mHelpAction = new QAction(tr("&Help"), this);
 	mInventoryAction = new QAction(tr("&Inventory"), this);
 	connect(mHelpAction, SIGNAL(triggered()), this, SLOT(showHelpWindow()));
@@ -10,7 +12,6 @@ MainWindow::MainWindow(){
 	mWindowMenu = menuBar()->addMenu(tr("&Windows"));
 	mWindowMenu->addAction(mHelpAction);
 	mWindowMenu->addAction(mInventoryAction);
-
 
 	new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_W), this, SLOT(menubarVisible()));
 	new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_H), this, SLOT(showHelpWindow()));
@@ -64,4 +65,7 @@ void MainWindow::closedInventoryWindow(){
 }
 void MainWindow::input(std::string s){
 	notify(new InputEvent(s));
+}
+void MainWindow::output(std::string s){
+	mContent->print(s);
 }

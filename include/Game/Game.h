@@ -5,14 +5,22 @@
 #include "Core/Director.h"
 #include "Core/ImplementedEvents.h"
 
+// Game includes
+#include "Game/Parser.h"
+#include "Game/Place.h"
+
+// Game story includes
+#include "Game/Story/SpawnPlain.h"
+
 #include <iostream>
 
-class Game : public Part {
+class Game : public Part, public Observer {
 public:
 	Game(Director* director);
 	virtual void receiveEvent(const Event* evt);
+	virtual void update(Subject* modifiedSubject, const Event* evt);
 protected:
-	void play(std::string);
+	PlaceManager* mPlaceManager;
 };
 
 #endif // GAME

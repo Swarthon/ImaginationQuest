@@ -11,7 +11,7 @@
 class Core : public Director {
 public:
 	Core();
-	void startGuiMode(int argv, char **args);
+	int startGuiMode(int argv, char **args);
 	virtual void receiveEvent(Part*, const Event*);
 	virtual void sendEvent(Part*, const Event*);
 protected:

@@ -7,6 +7,7 @@
 
 // std includes
 #include <vector>
+#include <algorithm>
 
 class Subject;
 

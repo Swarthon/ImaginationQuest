@@ -1,11 +1,15 @@
 #include "Game/Game.h"
 
 Game::Game(Director* director) : Part(director){
+	mPlaceManager = new PlaceManager();
+	mPlaceManager->attach(this);
+
+	SpawnPlain::create(mPlaceManager, "SpawnPlain");
+	mPlaceManager->enter(mPlaceManager->findByName("SpawnPlain"));
 }
 void Game::receiveEvent(const Event* evt){
-	if(evt->getType() == "InputEvent")
-		play(((InputEvent*)evt)->getMessage());
+	mPlaceManager->receiveEvent(evt);
 }
-
-void Game::play(std::string str){
+void Game::update(Subject* modifiedSubject, const Event* evt){
+	mDirector->receiveEvent(this, evt);
 }

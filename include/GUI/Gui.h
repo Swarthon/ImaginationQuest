@@ -16,7 +16,7 @@ public:
 	Gui(Director* director);
 	virtual int  start(int argv, char **args);
 	virtual void update(Subject* modifiedSubject, const Event* evt);
-	virtual void receiveEvent(const Event* evt){};
+	virtual void receiveEvent(const Event* evt);
 protected:
 	QApplication* mApp;
 	MainWindow* mMainWindow;

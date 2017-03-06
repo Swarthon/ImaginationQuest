@@ -23,7 +23,7 @@
 class MainWindow : public QMainWindow, public Subject{
 	Q_OBJECT
 public:
-	MainWindow();
+	MainWindow(Observer* obs = NULL);
 	~MainWindow();
 private:
 	QAction *mHelpAction;
@@ -40,6 +40,7 @@ public slots:
 	void closedHelpWindow();
 	void closedInventoryWindow();
 	void input(std::string);
+	void output(std::string);
 };
 
 #endif // MAINWINDOW
