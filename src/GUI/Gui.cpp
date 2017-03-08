@@ -13,6 +13,6 @@ void Gui::update(Subject* modifiedSubject, const Event* evt){
 	mDirector->receiveEvent(this, evt);
 }
 void Gui::receiveEvent(const Event* evt){
-	if(evt->getType() == "OutputEvent")
-		mMainWindow->output(((OutputEvent*)evt)->getMessage());
+	if(const OutputEvent* oevt = dynamic_cast<const OutputEvent*>(evt))
+		mMainWindow->output(oevt->getMessage());
 }

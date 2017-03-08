@@ -11,6 +11,7 @@
 
 // Game includes
 #include "Game/Command.h"
+#include "Game/Parser.h"
 
 class Place;
 
@@ -40,13 +41,13 @@ protected:
 	Place* findByName(std::string placeName){return mParent->findByName(placeName);}
 	virtual void output(std::string message){mParent->output(message);}
 
-	void addAction(Command, void(Place::*)(Parameters));
-	void runAction(CommandWithParameters);
+	void addAction(Command command, void(*func)(Place*,Parameters));
+	void runAction(Place* p, CommandWithParameters cwp);
 
 	PlaceManager* mParent;
 
 private:
-	std::map<Command,void(Place::*)(Parameters)> mAvailableActions;
+	std::map<Command,void(*)(Place*, Parameters)> mAvailableActions;
 };
 
 #define DECLARE_PLACE_CLASS(T)						\

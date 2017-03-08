@@ -10,7 +10,7 @@
 #include "Game/Place.h"
 
 // Game story includes
-#include "Game/Story/SpawnPlain.h"
+#include "Game/Story/Places/SpawnPlain.h"
 
 #include <iostream>
 

@@ -3,11 +3,11 @@
 Parser::Parser(){
 	mIgnoredWords.push_back("the");
 	mIgnoredWords.push_back("a");
-	mIgnoredWords.push_back("black");
 }
 CommandWithParameters Parser::process(std::string text){
 	if(text == std::string())
 		return CommandWithParameters();
+	for (auto & c: text) c = tolower(c);
 	std::istringstream iss(text);
 	std::vector<std::string> words;
 	std::string word;

@@ -1,21 +1,18 @@
 #include "Core/ImplementedEvents.h"
 
 InputEvent::InputEvent(std::string message){
-	setType("InputEvent");
 	mMessage = message;
 }
-std::string InputEvent::getMessage(){
+std::string InputEvent::getMessage() const{
 	return mMessage;
 }
 
 OutputEvent::OutputEvent(std::string message){
-	setType("OutputEvent");
 	mMessage = message;
 }
-std::string OutputEvent::getMessage(){
+std::string OutputEvent::getMessage() const {
 	return mMessage;
 }
 
 ReprintEvent::ReprintEvent(){
-	setType("ReprintEvent");
 }

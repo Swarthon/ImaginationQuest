@@ -64,6 +64,7 @@ void MainWindow::closedInventoryWindow(){
 	}
 }
 void MainWindow::input(std::string s){
+	mContent->print(std::string("> ") + s);
 	notify(new InputEvent(s));
 }
 void MainWindow::output(std::string s){

@@ -11,7 +11,7 @@
 class InputEvent : public Event {
 public:
 	InputEvent(std::string message);
-	virtual std::string getMessage();
+	virtual std::string getMessage() const;
 protected:
 	std::string mMessage;
 };
@@ -19,7 +19,7 @@ protected:
 class OutputEvent : public Event {
 public:
 	OutputEvent(std::string message);
-	virtual std::string getMessage();
+	virtual std::string getMessage() const;
 protected:
 	std::string mMessage;
 };

@@ -17,11 +17,10 @@ Place* PlaceManager::findByName(std::string placeName){
 	return mPlaces[placeName];
 }
 
-
-
-void Place::addAction(Command command, void(Place::*func)(Parameters)){
+void Place::addAction(Command command, void(*func)(Place*,Parameters)){
 	mAvailableActions[command] = func;
 }
-void Place::runAction(CommandWithParameters cwp){
-	(*this.*mAvailableActions[cwp.first])(cwp.second);
+void Place::runAction(Place* p, CommandWithParameters cwp){
+	if(mAvailableActions.find(cwp.first) != mAvailableActions.end())
+		mAvailableActions[cwp.first](p,cwp.second);
 }

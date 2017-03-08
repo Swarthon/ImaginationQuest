@@ -1,7 +1,7 @@
 ImaginationQuest
 =========
 
-ImaginationQuest is a Role-Playing Game written in Qt. Be who you want. Dicover a new map. This game does not require any graphic card because all you need is your imagination.
+ImaginationQuest is a Role-Playing Game written in Qt. Be who you want. Discover a new map. This game does not require any graphic card because all you need is your imagination.
 
 Download
 --------
