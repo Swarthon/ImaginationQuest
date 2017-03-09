@@ -6,8 +6,14 @@
 
 class Weapon : public Object {
 public:
+	double getAttack();
+	double getDefense();
 protected:
+	void setAttack(double);
+	void setDefense(double);
 private:
+	double mAttack;
+	double mDefense;
 };
 
 #endif // WEAPON

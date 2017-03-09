@@ -12,6 +12,8 @@
 // Game includes
 #include "Game/Command.h"
 #include "Game/Parser.h"
+#include "Game/Hero.h"
+#include "Game/Location.h"
 
 class Place;
 
@@ -36,15 +38,20 @@ public:
 	virtual void enter() = 0;
 	virtual void receiveEvent(const Event* evt) = 0;
 protected:
-	Place(){};
+	Place();
 	void changePlace(Place* place){mParent->changePlace(place);}
 	Place* findByName(std::string placeName){return mParent->findByName(placeName);}
-	virtual void output(std::string message){mParent->output(message);}
+	void output(std::string message){mParent->output(message);}
+
+	void addLocation(Location* location);
 
 	void addAction(Command command, void(*func)(Place*,Parameters));
 	void runAction(Place* p, CommandWithParameters cwp);
 
+	static void look(Place*, Parameters);
+
 	PlaceManager* mParent;
+	std::vector<Location*> mLocations;
 
 private:
 	std::map<Command,void(*)(Place*, Parameters)> mAvailableActions;

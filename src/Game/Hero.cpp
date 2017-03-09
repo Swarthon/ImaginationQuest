@@ -21,6 +21,20 @@ const std::vector<Object*> Hero::getObjects() const {
 	return mObjects;
 }
 
+double Hero::getAttack(){
+	return mAttack;
+}
+double Hero::getDefense(){
+	return mDefense;
+}
+
+void Hero::setAttack(double val){
+	mAttack = val;
+}
+void Hero::setDefense(double val){
+	mDefense = val;
+}
+
 Hero::Hero(){
-	
+
 }

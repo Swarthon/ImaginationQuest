@@ -6,6 +6,7 @@ HEADERS +=	include/GUI/MainWindow.h \
 		include/Game/Game.h \
 		include/Game/Hero.h \
 		include/Game/Place.h \
+		include/Game/PlaceHero.h \
 		include/Game/Parser.h \
 		include/Game/Command.h \
 		include/Game/Location.h \
@@ -29,6 +30,7 @@ SOURCES +=	src/main.cpp \
 		src/Game/Game.cpp \
 		src/Game/Hero.cpp \
 		src/Game/Place.cpp \
+		src/Game/PlaceHero.cpp \
 		src/Game/Parser.cpp \
 		src/Game/Location.cpp \
 		src/Game/Object.cpp \
