@@ -3,13 +3,14 @@
 
 // Game includes
 #include "Game/Object.h"
+#include "Game/Character.h"
 
 // std includes
 #include <vector>
 #include <algorithm>
 #include <map>
 
-class Hero {
+class Hero : public Character {
 public:
 	static Hero* getSingleton();
 
@@ -18,8 +19,7 @@ public:
 	void eraseObject(int);
 	const std::vector<Object*> getObjects() const;
 
-	double getAttack();
-	double getDefense();
+	void setDead(bool);
 protected:
 	enum Hand {
 		Right,
@@ -28,15 +28,9 @@ protected:
 	};
 	std::vector<Object*> mObjects;
 	std::map<Hand, Object*> mHands;
-
-	void setAttack(double);
-	void setDefense(double);
 private:
 	Hero();
 	static Hero* mSingleton;
-
-	double mAttack;
-	double mDefense;
 };
 
 #endif // HERO

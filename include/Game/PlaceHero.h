@@ -11,6 +11,7 @@ public:
 protected:
 	static void inventory(Place*, Parameters);
 	static void take(Place*, Parameters);
+	static void fight(Place*, Parameters);
 private:
 };
 

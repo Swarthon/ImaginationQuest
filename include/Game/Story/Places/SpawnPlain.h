@@ -5,6 +5,7 @@
 #include "Game/PlaceHero.h"
 #include "Game/Story/Locations/Ground.h"
 #include "Game/Story/Weapons/Sword.h"
+#include "Game/Story/NPCS/Orc.h"
 #include "Game/Hero.h"
 
 #include <iostream>
@@ -19,9 +20,7 @@ public:
 protected:
 	static void move(Place*, Parameters);
 
-	Ground* mGround;
-
-
+	Orc* mOrc;
 };
 
 #endif // SPAWNPLAIN

@@ -14,6 +14,9 @@
 #include "Game/Parser.h"
 #include "Game/Hero.h"
 #include "Game/Location.h"
+#include "Game/Npc.h"
+#include "Game/Story/Locations/Ground.h"
+#include "Game/Story/Objects/Corpse.h"
 
 class Place;
 
@@ -43,15 +46,19 @@ protected:
 	Place* findByName(std::string placeName){return mParent->findByName(placeName);}
 	void output(std::string message){mParent->output(message);}
 
-	void addLocation(Location* location);
-
 	void addAction(Command command, void(*func)(Place*,Parameters));
 	void runAction(Place* p, CommandWithParameters cwp);
+	virtual void update(){};
+
+	virtual std::string getNpcsDescription();
 
 	static void look(Place*, Parameters);
 
 	PlaceManager* mParent;
+	Ground* mGround;
 	std::vector<Location*> mLocations;
+	std::vector<Npc*> mNpcs;
+	std::string mDescription;
 
 private:
 	std::map<Command,void(*)(Place*, Parameters)> mAvailableActions;

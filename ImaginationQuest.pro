@@ -4,6 +4,8 @@ HEADERS +=	include/GUI/MainWindow.h \
 		include/GUI/Content.h \
 		include/GUI/Gui.h \
 		include/Game/Game.h \
+		include/Game/Character.h \
+		include/Game/Npc.h \
 		include/Game/Hero.h \
 		include/Game/Place.h \
 		include/Game/PlaceHero.h \
@@ -14,7 +16,9 @@ HEADERS +=	include/GUI/MainWindow.h \
 		include/Game/Weapon.h \
 		include/Game/Story/Places/SpawnPlain.h \
 		include/Game/Story/Weapons/Sword.h \
+		include/Game/Story/Objects/Corpse.h \
 		include/Game/Story/Locations/Ground.h \
+		include/Game/Story/NPCS/Orc.h \
 		include/Core/Core.h \
 		include/Core/Event.h \
 		include/Core/ImplementedEvents.h \
@@ -28,6 +32,8 @@ SOURCES +=	src/main.cpp \
 		src/GUI/Content.cpp \
 		src/GUI/Gui.cpp \
 		src/Game/Game.cpp \
+		src/Game/Character.cpp \
+		src/Game/Npc.cpp \
 		src/Game/Hero.cpp \
 		src/Game/Place.cpp \
 		src/Game/PlaceHero.cpp \
@@ -37,7 +43,9 @@ SOURCES +=	src/main.cpp \
 		src/Game/Weapon.cpp \
 		src/Game/Story/Places/SpawnPlain.cpp \
 		src/Game/Story/Weapons/Sword.cpp \
+		src/Game/Story/Objects/Corpse.cpp \
 		src/Game/Story/Locations/Ground.cpp \
+		src/Game/Story/NPCS/Orc.cpp \
 		src/Core/Core.cpp \
 		src/Core/ImplementedEvents.cpp \
 

@@ -3,14 +3,17 @@
 SpawnPlain::SpawnPlain(){
 	addAction("go", &move);
 
-	mGround = new Ground();
 	mGround->addObject(new Sword);
-	addLocation(mGround);
+	
+	mOrc = new Orc();
+	mNpcs.push_back(mOrc);
+
+	mDescription = "You are in a plain. On the north you can see mountains. \
+On the west there is a road that leads to a town. \
+You can see a big forest on the east and on the south you see a big sea with a little village near it.";
 }
 void SpawnPlain::enter(){
-	output(std::string("You are in a plain. On the north you can see mountains. \
-On the west there is a road that leads to a town. \
-You can see a big forest on the east and on the south you see a big sea with a little village near it. ") + mGround->getDescription());
+	output(mDescription + std::string(" ") + mGround->getDescription() + std::string(" ") + getNpcsDescription());
 }
 void SpawnPlain::receiveEvent(const Event* evt){
 	Parser p;
