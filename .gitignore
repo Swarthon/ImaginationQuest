@@ -1,0 +1,9 @@
+# Autoconf and Automake files
+Makefile
+*.log
+*.o
+*.status
+config.h
+
+# Binary file
+ImaginationQuest
