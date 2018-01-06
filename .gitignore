@@ -4,6 +4,7 @@ Makefile
 *.o
 *.status
 config.h
+.deps
 
 # Binary file
 ImaginationQuest
