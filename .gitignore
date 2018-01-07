@@ -2,11 +2,20 @@
 *.log
 *.o
 *.status
+*.in
 .deps
-.autom4te.cache
+autom4te.cache
+compile
+aclocal.m4
+config.status
+configure
+depcomp
+install-sh
+missing
+stamp-h1
+
 config.h
 Makefile
-
 
 # Binary file
 ImaginationQuest
