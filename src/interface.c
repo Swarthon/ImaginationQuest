@@ -9,13 +9,13 @@
 void
 get_answer(char* answer)
 {
-        scanf ("%s", answer);
+        readline(answer);
 }
 
 BOOL
 affirmative_answer(const char* answer)
 {
-        for (int i = 0; i < affirmative_numbers; i++)
+        for (int i = 0; i < affirmative_number; i++)
                 {
                         char* c = malloc (strlen(answer) *
                                           sizeof (char));

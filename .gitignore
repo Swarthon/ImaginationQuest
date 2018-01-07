@@ -1,10 +1,12 @@
 # Autoconf and Automake files
-Makefile
 *.log
 *.o
 *.status
-config.h
 .deps
+.autom4te.cache
+config.h
+Makefile
+
 
 # Binary file
 ImaginationQuest

@@ -101,7 +101,7 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_ImaginationQuest_OBJECTS = main.$(OBJEXT) character.$(OBJEXT) \
 	interface.$(OBJEXT) funcs.$(OBJEXT) values.$(OBJEXT) \
-	story.$(OBJEXT)
+	story.$(OBJEXT) parser.$(OBJEXT)
 ImaginationQuest_OBJECTS = $(am_ImaginationQuest_OBJECTS)
 ImaginationQuest_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -245,7 +245,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-ImaginationQuest_SOURCES = main.c character.c interface.c funcs.c values.c story.c
+ImaginationQuest_SOURCES = main.c character.c interface.c funcs.c values.c story.c parser.c
 all: all-am
 
 .SUFFIXES:
@@ -336,6 +336,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/funcs.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parser.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/story.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/values.Po@am__quote@
 
