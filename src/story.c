@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 #include "interface.h"
-#include "parser.h"
+#include "sentence.h"
 
 struct character* hero = NULL;
 
@@ -17,8 +17,10 @@ void begin_forest_func (struct character* c)
         ask_question("What do you want to do ?");
         char answer[32];
         get_answer(answer);
-        struct action* a = parse(answer);
-        printf("Unknown word %s\n", is_action_correct(a));
+        struct sentence* a = parse(answer);
+        const char* s;
+        if(s = is_sentence_correct(a))
+                printf("Unknown word %s\n", s);
 }
 
 /* Start Adventure */

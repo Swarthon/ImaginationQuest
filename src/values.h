@@ -12,7 +12,4 @@ extern const char* question_suffix;
 extern const char* affirmative_answers[];
 extern const size_t affirmative_number;
 
-extern const char* actions[];
-extern const size_t actions_number;
-
 #endif /* _VALUES_H_ */

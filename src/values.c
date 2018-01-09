@@ -10,9 +10,3 @@ const char* affirmative_answers[] = {
         "y",
 };
 const size_t affirmative_number = 2;
-
-const char* actions[] = {
-        "eat",
-        "go",
-};
-const size_t actions_number = 2;
