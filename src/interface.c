@@ -1,10 +1,11 @@
 #include "interface.h"
+#include "funcs.h"
+#include "values.h"
+
 
 #include <string.h>
 #include <stdio.h>
- 
-#include "funcs.h"
-#include "values.h"
+
 
 void
 get_answer(char* answer)
@@ -17,8 +18,7 @@ affirmative_answer(const char* answer)
 {
         for (int i = 0; i < affirmative_number; i++)
                 {
-                        char* c = malloc (strlen(answer) *
-                                          sizeof (char));
+                        char* c = malloc (strlen(answer) * sizeof (char));
                         strcpy (c, answer);
                         to_lowercase (c);
                         if (strcmp(c, affirmative_answers[i]) == 0)

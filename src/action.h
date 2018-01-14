@@ -27,19 +27,23 @@ extern struct action {
         char* name;
         unsigned int accepted_categories;
 } _action;
+typedef struct action action;
+
+
+extern const size_t
+action_find (const char* obj);
+
+extern const vec2
+word_find (const char* obj);
+
 
 /*---------------------------- Extern variable ------------------------------*/
-extern const struct action defined_actions [];
+extern const action defined_actions [];
 extern const size_t defined_actions_number;
 
 extern const char* word_categories [][MAX_WORDS_PER_CATEGORIE];
 extern const size_t word_categories_number;
 /*---------------------------------------------------------------------------*/
 
-extern const size_t
-action_find (const char* obj);
-
-extern const struct vector2
-word_find (const char* obj);
 
 #endif /* _ACTION_H_ */

@@ -13,9 +13,9 @@ main (void)
 {
         printf("%s\n", welcome_message);
 
-        hero = malloc(sizeof(struct character));
+        hero = malloc(sizeof(character));
         set_up_character (hero);
         start_adventure ();
-        
+
         return 0;
 }

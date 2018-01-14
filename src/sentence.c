@@ -5,19 +5,20 @@
 
 #include "funcs.h"
 #include "action.h"
+#include "interface.h"
 
-struct error*
-is_sentence_correct (const struct sentence* s)
+error*
+is_sentence_correct (const sentence* s)
 {
         if (s->action_id == -1)
                 return create_error(ERR_UNKNOWN_WORD, s->action_string);
-        struct action a = defined_actions[s->action_id];
+        action a = defined_actions[s->action_id];
         for (int i = 0; i < TARGET_ID_MAX; i++)
                 {
                         if (s->target_id[i].x == -1)
                                 return create_error(ERR_UNKNOWN_WORD,
                                                     s->target_string[i]);
-                        struct vector2 vec = s->target_id[i];
+                        vec2 vec = s->target_id[i];
                         unsigned int categorie = 1 << vec.x;
                         if (!(categorie & a.accepted_categories))
                                 return create_error(ERR_NON_ACCEPTED_WORD,
@@ -26,13 +27,13 @@ is_sentence_correct (const struct sentence* s)
         return NULL;
 }
 
-struct sentence*
-parse (const char* sentence)
+sentence*
+parse (const char* sen)
 {
-        struct sentence* sentence_parsed = malloc(sizeof(struct sentence));
+        sentence* sentence_parsed = malloc(sizeof(sentence));
 
-        char buffer[strlen (sentence)];
-        strcpy (buffer, sentence);
+        char buffer[strlen (sen)];
+        strcpy (buffer, sen);
 
         strtok (buffer, " ");
         strcpy(sentence_parsed->action_string, buffer);
@@ -46,4 +47,28 @@ parse (const char* sentence)
                                 = word_find (token);
                 }
         return sentence_parsed;
+}
+
+sentence*
+get_sentence (char* question)
+{
+        if (question)
+                ask_question(question);
+        char answer[32];
+        get_answer(answer);
+        sentence* s = parse(answer);
+        error* err  = is_sentence_correct(s);
+        if(err) {
+                switch (err->type) {
+                case 1:
+                        printf("Unknown word %s\n", err->message);
+                        break;
+                case 2:
+                        printf("Word %s cannot be used with this verb\n",
+                               err->message);
+                        break;
+                }
+                return get_sentence (question);
+        }
+        return s;
 }

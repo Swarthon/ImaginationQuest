@@ -1,7 +1,9 @@
 #ifndef _STORY_H_
 #define _STORY_H_
 
-extern struct character* hero;
+#include "character.h"
+
+extern character* hero;
 
 /* Begin Forest */
 void

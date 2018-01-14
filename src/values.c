@@ -10,4 +10,3 @@ const char* affirmative_answers[] = {
         "y",
 };
 const size_t affirmative_number = 2;
-

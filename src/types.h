@@ -3,32 +3,22 @@
 
 #include <stdlib.h>
 
-#include "values.h"
+typedef unsigned int ID;
+
 
 typedef int BOOL;
 #define TRUE  1
 #define FALSE 0
 
-struct vector2 {
+
+struct vec2
+{
         int x;
         int y;
-};
-extern struct vector2*
-create_vector2 (const int x, const int y);
+} _vector2;
+typedef struct vec2 vec2;
 
-struct array {
-        size_t size;
-        void* data;
-};
-
-#define LINE_LENGTH 100
-struct error {
-        int type;
-        char message[LINE_LENGTH];
-};
-extern struct error*
-create_error (const int type, const char* message);
-
-typedef unsigned int ID;
+extern vec2*
+create_vec2 (const int x, const int y);
 
 #endif // _TYPES_H_
