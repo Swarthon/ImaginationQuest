@@ -6,12 +6,23 @@
 #include "funcs.h"
 #include "action.h"
 
-const char*
-is_sentence_correct (const struct sentence* a)
+struct error*
+is_sentence_correct (const struct sentence* s)
 {
-        if (a->action_id == -1) return a->action_string;
+        if (s->action_id == -1)
+                return create_error(ERR_UNKNOWN_WORD, s->action_string);
+        struct action a = defined_actions[s->action_id];
         for (int i = 0; i < TARGET_ID_MAX; i++)
-                if (a->target_id[i] == -1) return a->target_string[i];
+                {
+                        if (s->target_id[i].x == -1)
+                                return create_error(ERR_UNKNOWN_WORD,
+                                                    s->target_string[i]);
+                        struct vector2 vec = s->target_id[i];
+                        unsigned int categorie = 1 << vec.x;
+                        if (!(categorie & a.accepted_categories))
+                                return create_error(ERR_NON_ACCEPTED_WORD,
+                                                    s->target_string[i]);
+                }
         return NULL;
 }
 
@@ -19,7 +30,7 @@ struct sentence*
 parse (const char* sentence)
 {
         struct sentence* sentence_parsed = malloc(sizeof(struct sentence));
-        
+
         char buffer[strlen (sentence)];
         strcpy (buffer, sentence);
 

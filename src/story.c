@@ -18,9 +18,16 @@ void begin_forest_func (struct character* c)
         char answer[32];
         get_answer(answer);
         struct sentence* a = parse(answer);
-        const char* s;
-        if(s = is_sentence_correct(a))
-                printf("Unknown word %s\n", s);
+        struct error* err;
+        if(err = is_sentence_correct(a)) {
+                switch (err->type) {
+                case 1:
+                        printf("Unknown word %s\n", err->message);
+                case 2:
+                        printf("Word %s cannot be used with this verb\n",
+                               err->message);
+                }
+        }
 }
 
 /* Start Adventure */

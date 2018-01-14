@@ -10,13 +10,13 @@ extern struct sentence
 {
         char action_string[WORD_LENGTH];
         char target_string[TARGET_ID_MAX][WORD_LENGTH];
-        
+
         ID action_id;
-        ID target_id[TARGET_ID_MAX];
+        struct vector2 target_id[TARGET_ID_MAX];
 } _sentence;
 
-extern const char*
-is_sentence_correct (const struct sentence* a);
+extern struct error*
+is_sentence_correct (const struct sentence* s);
 
 extern struct sentence*
 parse (const char* sentence);

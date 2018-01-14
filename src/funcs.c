@@ -22,7 +22,7 @@ readline (char* line)
         int c = 0, i = 0;
         for(i = 0; ((c = getchar()) != '\n'); i++)
                 line[i] = c;
-        line[i+1] = '\0';
+        line[i] = '\0';
 }
 
 int
